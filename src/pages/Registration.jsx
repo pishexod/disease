@@ -15,7 +15,6 @@ const Registration = () => {
             if (response.data.status) {
                 navigate('/');
             }
-            console.log(response);
         }
     };
 

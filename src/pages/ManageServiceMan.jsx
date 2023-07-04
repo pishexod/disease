@@ -70,9 +70,7 @@ const ManageServiceMan = () => {
             },
         });
         setDisease(response.data[0].disease);
-        console.log(response.data[0].disease)
         setServiceMan(response.data[0]);
-        console.log(response);
     };
 
 
@@ -96,11 +94,13 @@ const ManageServiceMan = () => {
 
     const handleAddDisease = async () => {
         try {
+            console.log(dis, disc)
             const response = await axios.post(
                 diseasesRoute,
                 {
                     name: dis,
                     description: disc,
+                    serviceManId:id
                 },
                 {
                     headers: {
@@ -119,7 +119,6 @@ const ManageServiceMan = () => {
 
     const handleDeleteDisease = async () => {
         try {
-            console.log(selectedDisease)
             const response = await axios.delete(diseasesRoute, {
                 data: {id: selectedDisease},
                 headers: {

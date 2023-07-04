@@ -121,7 +121,6 @@ const Home = () => {
             }
         };
         const handleDeleteUnit = async (id) => {
-            console.log(id)
             const local_token = localStorage.getItem('token');
             try {
                 await axios.delete(unitsRoute, {

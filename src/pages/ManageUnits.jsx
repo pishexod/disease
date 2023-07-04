@@ -80,7 +80,6 @@ const ManageUnits = () => {
                 }
             })
             await fetchUnit();
-            console.log(response)
             setFullName('');
             setRank('');
             setPosition('');
@@ -106,7 +105,6 @@ const ManageUnits = () => {
         }, {
             field: 'action', headerName: 'Дії', width: 200,
             renderCell: (serviceman) => {
-                console.log(serviceman)
                 return (
                     <NavLink to={`/manage-serviceman/${serviceman.row.id_service_man}`} style={{
                         fontWeight: 'bold',
@@ -125,7 +123,6 @@ const ManageUnits = () => {
         const serviceMan = params.row;
         setShowMOdalServiceMan(true)
         setServiceMan(serviceMan);
-        console.log(serviceMan)
     }
 
     return (
