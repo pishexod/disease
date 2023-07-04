@@ -53,6 +53,7 @@ const ManageServiceMan = () => {
     const [disease, setDisease] = useState([]);
     const [dis, setDis] = useState('');
     const [disc, setDisc] = useState('');
+    const [unitId, setUnitId] = useState('');
     const [selectedDisease, setSelectedDisease] = useState('');
     const getToken = () => {
         const local_token = localStorage.getItem('token');
@@ -70,6 +71,7 @@ const ManageServiceMan = () => {
             },
         });
         setDisease(response.data[0].disease);
+        setUnitId(response.data[0].unit.id);
         setServiceMan(response.data[0]);
     };
 
@@ -100,7 +102,7 @@ const ManageServiceMan = () => {
                 {
                     name: dis,
                     description: disc,
-                    serviceManId:id
+                    serviceManId: id
                 },
                 {
                     headers: {
@@ -160,6 +162,7 @@ const ManageServiceMan = () => {
                     <Button onClick={handleDeleteModalOpen}>Видалити хворобу</Button>
                 </CardActions>
             </Card>
+            <a href={'/manage-units/' + unitId}>Повернутися до підрозділу</a>
 
             <Modal className={classes.modal} open={showAddModal} onClose={handleAddModalClose}>
                 <div className={classes.modalContent}>

@@ -179,6 +179,7 @@ const ManageUnits = () => {
                 <Button onClick={() => setIsModalOpen(true)}>
                     Додати в/с
                 </Button>
+                <a href={'/'}>Повернутися на головну</a>
             </Container>
             {showModalServiceMan && (
                 <UpdateServiceMan
